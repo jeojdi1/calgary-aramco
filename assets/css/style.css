@@ -252,21 +252,10 @@ section.alt { background: var(--dark2); }
 #why-calgary {
   position: relative;
   overflow: hidden;
-}
-
-#why-calgary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
   background: 
-    linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.92) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.94) 100%),
     url('../images/calgary-oil.avif') center / cover no-repeat;
-  z-index: 0;
-}
-
-#why-calgary > * {
-  position: relative;
-  z-index: 1;
+  background-attachment: fixed;
 }
 
 .two-col {
@@ -323,6 +312,15 @@ section.alt { background: var(--dark2); }
 /* ═══════════════════════════════════════
    COMPETITIVE ADVANTAGE
 ═══════════════════════════════════════ */
+#competitive {
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(to bottom, rgba(15,15,15,0.75) 0%, rgba(15,15,15,0.85) 100%),
+    url('../images/calgary3.jpg') center / cover no-repeat;
+  background-attachment: fixed;
+}
+
 .adv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -376,6 +374,15 @@ section.alt { background: var(--dark2); }
 /* ═══════════════════════════════════════
    COMPANIES
 ═══════════════════════════════════════ */
+#companies {
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(to bottom, rgba(10,10,10,0.70) 0%, rgba(10,10,10,0.82) 100%),
+    url('../images/calgary4.jpg') center / cover no-repeat;
+  background-attachment: fixed;
+}
+
 .company-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -414,7 +421,7 @@ section.alt { background: var(--dark2); }
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   font-weight: 700;
-  color: var(--gold);
+  color: var (--gold);
   line-height: 1;
 }
 .co-stat-label { font-size: 10px; color: var(--muted); margin-top: 3px; }
@@ -422,6 +429,15 @@ section.alt { background: var(--dark2); }
 /* ═══════════════════════════════════════
    MARKET SIZE
 ═══════════════════════════════════════ */
+#market {
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(to bottom, rgba(15,15,15,0.75) 0%, rgba(15,15,15,0.85) 100%),
+    url('../images/calgary5.jpg') center / cover no-repeat;
+  background-attachment: fixed;
+}
+
 .market-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -676,22 +692,26 @@ section.alt { background: var(--dark2); }
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.12s; }
-.reveal-delay-2 { transition-delay: 0.24s; }
-.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal:nth-child(2) { transition-delay: 0.12s; }
+.reveal:nth-child(3) { transition-delay: 0.24s; }
 
 /* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 960px) {
-  #navbar { padding: 0 24px; }
+  #navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+  }
   .nav-links {
-    display: none;
     position: absolute;
     top: 64px; left: 0; right: 0;
-    background: rgba(10,10,10,0.98);
+    display: none;
     flex-direction: column;
-    gap: 0;
+    background: var(--dark);
     border-bottom: 1px solid var(--border);
     padding: 12px 0;
   }
